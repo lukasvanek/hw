@@ -39,9 +39,6 @@ class App extends Component {
           htmlAttributes={{ lang: 'en' }}
           title="Homework"
           titleTemplate="%s"
-          link={[
-            ...favicon.link,
-          ]}
         />
         {/* Pass location to ensure header active links are updated. */}
 

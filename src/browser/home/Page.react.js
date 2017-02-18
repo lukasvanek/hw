@@ -30,7 +30,7 @@ class Page extends Component {
         <div className="search-box">
           <input type="text" placeholder="Search" value={this.state.value} onChange={this.handleChange} autoFocus />
         </div>
-        <div classNames="grid">
+        <div className="grid">
           {images.valueSeq().map((image) =>
             <a key={image._id}>
               <figure>

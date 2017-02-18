@@ -114,7 +114,7 @@
     "react-native-uuid": "^1.4.8",
     "react-native-vector-icons": "^3.0.0",
     "react-redux": "^4.0.0",
-    "react-router": "^2.3.0",
+    "react-router": "^2.5.2",
     "react-router-redux": "^4.0.0",
     "react-router-scroll": "^0.3.0",
     "react-scrollbar": "^0.4.2",
