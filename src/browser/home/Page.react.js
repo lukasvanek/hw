@@ -15,18 +15,18 @@ class Page extends Component {
             <figure>
               <img src={image.url} alt="" />
               <figcaption>
-                {image.title}
-                <button onClick={() => toggleFav(image)}>
-                  <i className={cx('', {
-                    'ion-android-favorite-outline': !image.fav,
-                    'ion-android-favorite': image.fav,
-                  })} />
-                </button>
-                <button onClick={() => rmImage(image)}>
-                  <i className="ion-ios-trash-outline" />
-                </button>
-                
-                ion-android-favorite
+                <div className="title">{image.title}</div>
+                <div className="controls">
+                  <button className="fav" onClick={() => toggleFav(image)}>
+                    <i className={cx('', {
+                      'ion-android-favorite-outline': !image.fav,
+                      'ion-android-favorite': image.fav,
+                    })} />
+                  </button>
+                  <button className="remove" onClick={() => rmImage(image)}>
+                    <i className="ion-ios-trash-outline" />
+                  </button>
+                </div>
               </figcaption>
             </figure>
           </a>
