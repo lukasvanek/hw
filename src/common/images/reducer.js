@@ -8,7 +8,7 @@ const InitialState = Record({
   map: Map(),
 }, 'images');
 
-export default function imagesReducer(state = new InitialState, action) {
+export default function imagesReducer(state = new InitialState(), action) {
   switch (action.type) {
     case types.FETCH_IMAGES_SUCCESS: {
       return MapMerge(action.images, Image, '_id', state);
@@ -24,7 +24,7 @@ export default function imagesReducer(state = new InitialState, action) {
     case types.RM_IMAGE: {
       return state
         .deleteIn(['map', action.imageId]);
-    }    
+    }
   }
   return state;
 }

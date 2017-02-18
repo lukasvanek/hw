@@ -7,7 +7,7 @@ const InitialState = Record({
   storageLoaded: false,
 }, 'app');
 
-export default function appReducer(state = new InitialState, action) {
+export default function appReducer(state = new InitialState(), action) {
   switch (action.type) {
 
     case actions.APP_OFFLINE:

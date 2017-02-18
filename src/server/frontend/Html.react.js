@@ -18,15 +18,9 @@ export default class Html extends Component {
         rel="stylesheet"
       />;
 
-
-
     return (
       <html {...helmet.htmlAttributes.toComponent()}>
         <head>
-          <meta
-            name="google-site-verification"
-            content="CYLVufnI_4NqZZUcSIptcvwhx2ZbAF5BVe0tixZ60ac"
-          />
           {helmet.title.toComponent()}
           {helmet.base.toComponent()}
           {helmet.meta.toComponent()}

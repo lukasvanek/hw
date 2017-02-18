@@ -3,9 +3,9 @@ import { Record } from '../_tools/transit';
 const InitialState = Record({
   appName: '',
   appVersion: '',
-  sentryUrl: ''
+  sentryUrl: '',
 }, 'config');
 
-export default function configReducer(state = new InitialState) {
+export default function configReducer(state = new InitialState()) {
   return state;
 }

@@ -6,14 +6,14 @@ import serverFetch from '../../common/_tools/serverFetch';
 import { getImages, toggleFav, rmImage } from '../../common/images/actions';
 
 class Page extends Component {
- constructor(props) {
+  constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = { value: '' };
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(event) {
-    this.setState({value: event.target.value});
-  }  
+    this.setState({ value: event.target.value });
+  }
   render() {
     const { toggleFav, rmImage } = this.props;
     let images = this.props.images;
@@ -26,9 +26,9 @@ class Page extends Component {
       });
     }
     return (
-  		<div className="container">
+      <div className="container">
         <div className="search-box">
-          <input type="text" placeholder="Search" value={this.state.value} onChange={this.handleChange} autoFocus={true} />
+          <input type="text" placeholder="Search" value={this.state.value} onChange={this.handleChange} autoFocus />
         </div>
         <div classNames="grid">
           {images.valueSeq().map((image) =>
@@ -39,10 +39,12 @@ class Page extends Component {
                   <div className="title">{image.title}</div>
                   <div className="controls">
                     <button className="fav" onClick={() => toggleFav(image)}>
-                      <i className={cx('', {
-                        'ion-android-favorite-outline': !image.fav,
-                        'ion-android-favorite': image.fav,
-                      })} />
+                      <i
+                        className={cx('', {
+                      'ion-android-favorite-outline': !image.fav,
+                      'ion-android-favorite': image.fav,
+                    })}
+                      />
                     </button>
                     <button className="remove" onClick={() => rmImage(image)}>
                       <i className="ion-ios-trash-outline" />
@@ -53,13 +55,13 @@ class Page extends Component {
             </a>
           )}
         </div>
-  		</div>
+      </div>
     );
   }
 }
 
 // ne ideální, ale funkční server-side rendering
-Page = serverFetch(Page, { getImages }, 
+Page = serverFetch(Page, { getImages },
 ({ getImages }, pushPromise, start, done) => {
   start();
   const promise = new Promise(getImages);

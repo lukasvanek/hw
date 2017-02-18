@@ -9,7 +9,7 @@ import { spawn } from 'child_process';
 
 const urls = {
   '/': 'index.html',
-  '/404': '404.html'
+  '/404': '404.html',
 };
 
 gulp.task('to-html', done => {

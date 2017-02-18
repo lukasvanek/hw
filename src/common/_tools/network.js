@@ -29,12 +29,10 @@ export function Request(url, options = {}) {
       })
       .then(({ status, json }) => {
         if (status >= 200 && status < 300) resolve(json);
-        else {
-          if (json) {
-            reject(json.error);
-          } else {
-            reject('no json in response');
-          }
+        else if (json) {
+          reject(json.error);
+        } else {
+          reject('no json in response');
         }
       })
       .catch((e) => {
@@ -47,13 +45,13 @@ export function Request(url, options = {}) {
 function buildURL(urlParts) {
   let subdom = 'api';
   if (urlParts.subdom) subdom = urlParts.subdom;
-  let endpoint = `http://localhost:3000`;
+  let endpoint = 'http://localhost:3000';
   if (urlParts.endpoint) endpoint = urlParts.endpoint;
   return `${endpoint}/${urlParts.path}`;
 }
 
 export function Get(urlParts, cookie) {
-  let opts = { method: 'GET' };
+  const opts = { method: 'GET' };
   if (cookie) {
     opts.headers = { cookie };
   }

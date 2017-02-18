@@ -14,7 +14,7 @@ export function start() {
       // dispatch(firebaseStart());
     });
     return {
-      type: APP_START
+      type: APP_START,
     };
   };
 }

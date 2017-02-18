@@ -42,7 +42,7 @@ export function toggleFav(image) {
     return {
       type: types.TOGGLE_FAV_IMAGE,
     };
-  }
+  };
 }
 
 export function rmImage(image) {

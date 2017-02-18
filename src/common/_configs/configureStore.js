@@ -33,9 +33,9 @@ export default function configureStore(options) {
     const replaceReducer = configureReducer =>
       store.replaceReducer(configureReducer(initialState, platformReducers));
 
-      module.hot.accept('./configureReducer', () => {
-        replaceReducer(require('./configureReducer'));
-      });
+    module.hot.accept('./configureReducer', () => {
+      replaceReducer(require('./configureReducer'));
+    });
   }
 
   return store;

@@ -10,7 +10,7 @@ const runEslint = () => {
     'gulp/**/*.js',
     'gulpfile.babel.js',
     'src/**/*.js',
-    'webpack/*.js'
+    'webpack/*.js',
   ], { base: './' })
     .pipe(eslint({ fix: args.fix }))
     .pipe(eslint.format())

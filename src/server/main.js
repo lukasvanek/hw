@@ -86,7 +86,7 @@ app.get('/api/images', (req, res) => {
       _id: 12,
       title: 'Bike 2',
       url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg09.jpg',
-    },  
+    },
   ];
   res.json(images);
 });
