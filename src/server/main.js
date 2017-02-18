@@ -13,7 +13,6 @@ if (config.isProduction) {
   });
 }
 
-
 const app = express();
 
 app.get('/robots.txt', (req, res) => {
@@ -26,8 +25,35 @@ app.get('/sitemap.txt', (req, res) => {
   res.send(fs.readFileSync(`${__dirname}/sitemap.txt`));
 });
 
+app.get('/api/images', (req, res) => {
+  const images = [
+    {
+      _id: 1,
+      title: 'Lorem ipsum dolor sit amet',
+      image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg01.jpg',
+    },
+    {
+      _id: 2,
+      title: 'Lorem ipsum dolor sit amet',
+      image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg01.jpg',
+    },
+    {
+      _id: 3,
+      title: 'Lorem ipsum dolor sit amet',
+      image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg01.jpg',
+    },
+    {
+      _id: 4,
+      title: 'Lorem ipsum dolor sit amet',
+      image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg10.jpg',
+    }
+  ];
+  res.json(images);
+});
+
 app.use(frontend);
 app.use(errorHandler);
+
 
 if (config.isProduction) app.use(raven.middleware.express(config.sentryServerSideUrl));
 
