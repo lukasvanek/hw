@@ -37,37 +37,8 @@ class App extends Component {
       >
         <Helmet
           htmlAttributes={{ lang: 'en' }}
-          title="Sinesquare"
+          title="Homework"
           titleTemplate="%s"
-          meta={[
-            ...bootstrap4Metas,
-            {
-              name: 'description',
-              content: 'All waves you need.',
-            },
-            {
-              name: 'keywords',
-              content: 'sinesquare, independent, music, platform, free, youtube, soundcloud, spotify',
-            },
-            {
-              name: 'author',
-              content: 'Lukáš Vaněk',
-            },
-            {
-              name: 'application-name',
-              content: 'Sinesquare',
-            },
-
-            {
-              property: 'og:title',
-              content: 'Sinesquare',
-            },
-            {
-              property: 'og:site_name',
-              content: 'Sinesquare',
-            },
-            ...favicon.meta,
-          ]}
           link={[
             ...favicon.link,
           ]}
