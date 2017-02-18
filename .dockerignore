@@ -1,0 +1,12 @@
+# Standard Ignore
+.git/
+node_modules/
+npm-debug.log
+
+# React-Native Ignore
+android/
+ios/
+.flowconfig
+.watchmanconfig
+index.android.js
+index.ios.js

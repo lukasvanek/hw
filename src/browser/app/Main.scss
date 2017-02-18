@@ -1,0 +1,138 @@
+// Remember to use rems and ems. http://css-tricks.com/rems-ems.
+
+@import '~normalize.css/normalize.css';
+
+// http://phonegap-tips.com/articles/essential-phonegap-css-webkit-tap-highlight-color.html
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// Goodness.
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: #333;
+  font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: #fff;
+}
+
+h1 {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: #000;
+}
+
+h2 {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  letter-spacing: 0.041em;
+  color: #000;
+}
+h2.tab-header {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #555;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.main-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  .sub-container {
+    padding: 0 20px; // width gonna be 1000
+    position: relative;
+  }
+}
+
+:focus {
+  outline-style: none;
+}
+
+a {
+  color: #346392;
+  text-decoration: none;
+  &:hover {
+    color: darken(#346392,30%);
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  background: transparent;
+}
+
+button.btn {
+  background-color: black;
+  border: 0;
+  color: #fff;
+  line-height: 1.8;
+  margin: 0 10px 0 0;
+  padding: 0 1em;
+
+  &:hover {
+    background-color: #346392;
+  }
+
+  &:active {
+    background-color: #27496d;
+  }
+
+  &[disabled] {
+    background-color: #6496c8;
+    opacity: .5;
+  }
+
+}
+
+button,
+input,
+textarea {
+  &:disabled {
+    opacity: .5;
+  }
+}
+
+p,
+li {
+  max-width: 42em;
+}
+
+li {
+  list-style-type: none;
+}
+
+input {
+  border: none;
+}
+
+fieldset {
+  border: none;
+}
