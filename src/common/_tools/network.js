@@ -47,7 +47,7 @@ export function Request(url, options = {}) {
 function buildURL(urlParts) {
   let subdom = 'api';
   if (urlParts.subdom) subdom = urlParts.subdom;
-  let endpoint = `https://${subdom}.sinesquare.com`;
+  let endpoint = `http://localhost:3000`;
   if (urlParts.endpoint) endpoint = urlParts.endpoint;
   return `${endpoint}/${urlParts.path}`;
 }

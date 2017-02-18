@@ -5,9 +5,7 @@ import { APP_STORAGE_LOAD } from '../app/actions';
 import { Iterable } from 'immutable';
 import { fromJSON, toJSON } from '../_tools/transit';
 
-const stateToSave = [
-  ['fields'],
-];
+const stateToSave = [];
 
 const invariantFeatureState = (state, feature) => invariant(
   Iterable.isIterable(state[feature]),

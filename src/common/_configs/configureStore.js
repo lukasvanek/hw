@@ -33,15 +33,9 @@ export default function configureStore(options) {
     const replaceReducer = configureReducer =>
       store.replaceReducer(configureReducer(initialState, platformReducers));
 
-    if (initialState.device.isReactNative) {
-      module.hot.accept(() => {
-        replaceReducer(require('./configureReducer').default);
-      });
-    } else {
       module.hot.accept('./configureReducer', () => {
         replaceReducer(require('./configureReducer'));
       });
-    }
   }
 
   return store;
